@@ -42,3 +42,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Files to not conflict with other Flutter developers
+.lock 
+.gradle
+
+lib/epolli_app_secret/

@@ -1,6 +1,33 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application
-        android:label="food_ordering_app"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.epolli.EPolli">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
+    <!-- Add internet access permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!--  -->
+    <!-- Adding permisstion for camera and gallery access in android version lower then 13  -->
+    <!--  -->
+    <!-- read write internal storage -->
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" android:maxSdkVersion ="32" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" android:maxSdkVersion ="32" />
+    <!-- read write external storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion ="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion ="32" />
+
+     <!--  -->
+    <!-- Adding permisstion for camera and gallery access in android version 13  -->
+    <!--  -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"  />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Abvove Android 10 -->
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    
+   <application
+        android:label="ePolli"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -30,4 +57,26 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <queries>
+        <!-- If your app opens https URLs -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <!-- If your app makes calls -->
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+        <!-- If your sends SMS messages -->
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto" />
+        </intent>
+        <!-- If your app sends emails -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
+    </queries>
 </manifest>

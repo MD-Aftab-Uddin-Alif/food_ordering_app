@@ -1,4 +1,4 @@
-# food_ordering_app
+# ePolli
 
 A new Flutter project.
 
